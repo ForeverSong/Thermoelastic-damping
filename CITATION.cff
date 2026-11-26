@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article that it accompanies."
+title: "Code and data for: Consistent heat-flux boundary conditions for Guyer-Krumhansl thermoelastic damping in micro- and nanoresonators"
+type: software
+authors:
+  - family-names: Peng
+    given-names: Bo-Rong
+# TODO before the repository is made public:
+#   - add the co-authors (same order as in the article)
+#   - add repository-code: "https://github.com/<user>/<repository>"
+#   - add version and date-released when a release is tagged
+#   - after acceptance, add a preferred-citation block with the journal, volume, article number and DOI

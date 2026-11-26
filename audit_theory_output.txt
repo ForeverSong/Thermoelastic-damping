@@ -1,0 +1,23 @@
+== 1. Fourier slab vs Lifshitz-Roukes closed form (independent formula)
+  Om=   0.5  -Im I=0.049872186493  LR=0.049872186493
+  Om=   3.0  -Im I=0.274662421735  LR=0.274662421735
+  Om=  10.0  -Im I=0.494152439502  LR=0.494152439502
+  Om=  50.0  -Im I=0.192805002885  LR=0.192805002885
+  Om= 300.0  -Im I=0.036734053257  LR=0.036734053257
+== 2. Consistent slab = G-K solved in the evenly extended (specular) domain: mode sum vs closed form
+  Om=  1.0 L=0.1: modesum=-0.0166358945-0.1278303524j  consistent=-0.0166358945-0.1278303524j  |diff|=2.5e-16   (scalar closure differs by 2.97e-02)
+  Om= 10.0 L=0.1: modesum=-0.6259032246-0.4803564361j  consistent=-0.6259032246-0.4803564361j  |diff|=2.3e-16   (scalar closure differs by 1.83e-01)
+  Om= 30.0 L=0.3: modesum=-0.9919428857-0.0894662743j  consistent=-0.9919428857-0.0894662743j  |diff|=1.1e-16   (scalar closure differs by 7.28e-01)
+  Om=200.0 L=0.05: modesum=-0.9967419465-0.0490998542j  consistent=-0.9967419465-0.0490998542j  |diff|=2.2e-16   (scalar closure differs by 7.38e-02)
+== 3. Scalar closure on the disk: can a vortical flux cancel the leak? implied slip length S_eff
+  Om= 0.50 L=0.1: leak B~=-1.500e-05-1.500e-02j  S_eff=-0.2494+0.0267j  wall power term=-7.838e-03 (INJECTS power)
+  Om= 3.39 L=0.1: leak B~=-1.017e-04-1.017e-01j  S_eff=-0.1649+0.0667j  wall power term=-3.000e-01 (INJECTS power)
+  Om= 3.39 L=0.3: leak B~=-9.153e-04-9.153e-01j  S_eff=-0.4224+0.0607j  wall power term=-3.614e+00 (INJECTS power)
+  Om=20.00 L=0.3: leak B~=-5.400e-03-5.400e+00j  S_eff=-0.3966+0.0124j  wall power term=-1.255e+02 (INJECTS power)
+  Om=50.00 L=0.05: leak B~=-3.750e-04-3.750e-01j  S_eff=-0.0544+0.0069j  wall power term=-7.814e+00 (INJECTS power)
+== 4. Wall model positivity: where does Im I_W reach zero / change sign?
+  max of Im(I_W)/Omega over the grid restricted to |delta|<0.5: -2.8237577515576653e-09 (1.0, np.float64(10000.0), np.float64(1.0), 0.001)
+  no-slip, Om=1, L=0.9: delta=0.90  Im I_W=-1.9333e-01   exact Im I=-2.5960e-01
+  no-slip, Om=1, L=1.0: delta=1.00  Im I_W=+0.0000e+00   exact Im I=-2.1915e-01
+  no-slip, Om=1, L=1.1: delta=1.10  Im I_W=-4.9378e-01   exact Im I=-1.8637e-01
+  no-slip, Om=1, L=1.5: delta=1.50  Im I_W=-1.5503e-01   exact Im I=-1.0593e-01

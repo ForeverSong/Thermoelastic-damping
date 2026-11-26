@@ -1,0 +1,44 @@
+Delta_E (Si, 300 K) = 0.00020037669435267239
+
+=== 1. slab: closed form vs finite differences (N = 4000) ===
+   Omega      L                   closed I                       FD I   rel.err
+     5.0   0.08    -0.26267547-0.43806915j    -0.26267547-0.43806914j   2.9e-08
+    30.0   0.08    -0.92193993-0.26044095j    -0.92193989-0.26044092j   5.5e-08
+    30.0   0.30    -0.99194289-0.08946627j    -0.99194282-0.08946627j   6.2e-08
+   200.0   0.05    -0.99674195-0.04909985j    -0.99674189-0.04909984j   6.1e-08
+     2.0   0.50    -0.74288855-0.43705784j    -0.74288850-0.43705781j   6.1e-08
+
+=== 2. disk: closed form vs Chebyshev collocation (N = 121) ===
+  Omega     L     S  model                    closed I                   colloc I   rel.err
+    3.4  0.10  0.00  S         -0.49298986-0.44761892j    -0.49298986-0.44761892j   4.2e-12
+    3.4  0.10  0.00  slip      -0.58597744-0.48897550j    -0.58597744-0.48897550j   7.8e-14
+    3.4  0.10  0.10  S         -0.49298986-0.44761892j    -0.49298986-0.44761892j   4.2e-12
+    3.4  0.10  0.10  slip      -0.56124010-0.49245718j    -0.56124010-0.49245718j   2.9e-14
+    3.4  0.10   inf  S         -0.49298986-0.44761892j    -0.49298986-0.44761892j   4.2e-12
+    3.4  0.10   inf  slip      -0.53404385-0.49484500j    -0.53404385-0.49484500j   6.2e-14
+   20.0  0.30  0.30  S         -0.51278470-0.04572413j    -0.51278470-0.04572413j   3.2e-12
+   20.0  0.30  0.30  slip      -0.99267482-0.08512471j    -0.99267482-0.08512471j   3.8e-15
+    0.5  0.05  0.05  S         -0.02140226-0.14261786j    -0.02140226-0.14261786j   6.2e-12
+    0.5  0.05  0.05  slip      -0.02283636-0.14915101j    -0.02283636-0.14915101j   2.7e-13
+  100.0  0.02  0.00  S         -0.99273925-0.03663286j    -0.99273925-0.03663286j   3.1e-13
+  100.0  0.02  0.00  slip      -0.99728082-0.03628438j    -0.99728082-0.03628438j   1.9e-15
+    3.4  0.60  0.60  S         -0.20287178-0.04358038j    -0.20287178-0.04358038j   5.3e-12
+    3.4  0.60  0.60  slip      -0.95395380-0.20962174j    -0.95395380-0.20962174j   5.0e-14
+
+=== 3a. energy identity, slab: |Im I| vs 12*D/Omega ===
+consistent Omega= 10.0 L=0.10: moment=0.480356 dissipation=0.480356 mismatch= 2.1e-09  wall flux q(1/2)=0.0000-0.0000j
+consistent Omega= 30.0 L=0.30: moment=0.089466 dissipation=0.089466 mismatch= 7.7e-10  wall flux q(1/2)=-0.0000+0.0000j
+S          Omega= 10.0 L=0.10: moment=0.368127 dissipation=0.320446 mismatch= 1.3e-01  wall flux q(1/2)=-0.0003-0.3000j
+S          Omega= 30.0 L=0.30: moment=0.024204 dissipation=20.332652 mismatch= 8.4e+02  wall flux q(1/2)=-0.0081-8.1000j
+
+=== 3b. energy identity, disk: |Im I| vs 4*D/(pi*Omega) ===
+slip S=0.00 Omega=  3.4 L=0.10: moment=0.488976 (quad 0.488976) dissipation=0.488975 mismatch= 1.0e-09  q_n(wall)=7.14e-17
+slip S=0.00 Omega= 20.0 L=0.30: moment=0.072767 (quad 0.072767) dissipation=0.072767 mismatch= 5.3e-11  q_n(wall)=8.51e-17
+slip S=0.10 Omega=  3.4 L=0.10: moment=0.492457 (quad 0.492457) dissipation=0.492457 mismatch= 1.0e-09  q_n(wall)=4.87e-17
+slip S=0.10 Omega= 20.0 L=0.30: moment=0.078557 (quad 0.078557) dissipation=0.078557 mismatch= 3.1e-11  q_n(wall)=1.39e-16
+slip S= inf Omega=  3.4 L=0.10: moment=0.494845 (quad 0.494845) dissipation=0.494845 mismatch= 8.3e-10  q_n(wall)=2.73e-16
+slip S= inf Omega= 20.0 L=0.30: moment=0.101300 (quad 0.101300) dissipation=0.101300 mismatch= 4.8e-10  q_n(wall)=5.20e-18
+S    S=0.00 Omega=  3.4 L=0.10: moment=0.447619 (quad 0.447619) dissipation=0.400276 mismatch= 1.1e-01  q_n(wall)=1.02e-01
+S    S=0.00 Omega= 20.0 L=0.30: moment=0.045724 (quad 0.045724) dissipation=3.030745 mismatch= 6.5e+01  q_n(wall)=5.40e+00
+P    S=0.00 Omega=  3.4 L=0.10: moment=0.494192 (quad 0.494192) dissipation=0.486496 mismatch= 1.6e-02  q_n(wall)=1.11e-16
+P    S=0.00 Omega= 20.0 L=0.30: moment=0.088750 (quad 0.088750) dissipation=0.081604 mismatch= 8.1e-02  q_n(wall)=7.81e-18

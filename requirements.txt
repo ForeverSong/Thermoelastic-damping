@@ -1,0 +1,6 @@
+# Tested with Python 3.13, NumPy 2.5.3, SciPy 1.18.1, Matplotlib 3.11.2.
+# Pillow is used only by graphical_abstract.py, to write the TIFF file.
+numpy
+scipy
+matplotlib
+pillow
